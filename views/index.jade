@@ -1,0 +1,12 @@
+extend layout
+block content
+  .row
+    .col-md-8.col-md-offset-2(style= "margin-bottom: 30px")
+      form( method="GET", action="/formulario_candidato")
+        button(type="submit", class= "add_candidate btn btn-primary btn-lg btn-block") Adiconar Candidato
+  .row
+    .col-md-8.col-md-offset-2
+      form( method="GET", action="/lista_candidato")
+        button(type="submit", class= "list_candidate btn btn-primary btn-lg btn-block") Listar/Remover Candidatos
+      
+      

@@ -1,25 +1,42 @@
-var express = require('express');
-var app     = express();
-app.get('/', function (req, res) {
-   res.sendFile( __dirname + "/" + "sensor.htm" );
-})
-app.get('/sensor', function (req, res) {
-  //  res.send('Hello World');
-   console.log('Hello World');
+var express      = require('express');
+var path         = require('path');
+var app = express();
+
+app.use(express.static(__dirname + '/public'));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+
+app.get('/', function(req, res) {
+  res.render('index', {
+    title: 'Menu Principal'
+  });
 });
-app.post('/sensor',function (req, res) {
-  // res.send('Ok');
-  console.log('add');
+
+app.get('/formulario_candidato', function(req, res) {
+  res.render('add_candidate');
+  // res.sendStatus(200);
+  // res.end();
+});
+var lista= {lista:{'nome':["pedro","carlo","Joana"]}}
+app.get('/lista_candidato',function (req, res) {
+  console.log("fill");
+  res.render('list_candidate',lista)
 });
 
-app.delete('/sensor',function (req, res) {
-  // res.send("BBB");
-  console.log('delete');
-})
+app.route('/candidate')
+      .get(function() {
+        console.log("ok");
+      })
+      .post(function () {
+        console.log("err");
+      })
+      .delete(function() {
+        console.log("del");
+      })
+var server = app.listen(8081, function() {
+  var host = server.address().address
+  var port = server.address().port
 
-var server = app.listen(8081, function () {
-   var host = server.address().address
-   var port = server.address().port
-
-   console.log("teste", host, port)
+  console.log("http://localhost:"+port)
 })
