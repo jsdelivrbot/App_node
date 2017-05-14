@@ -1,22 +1,29 @@
 extend layout
 block content
   .grid
-    .row.form-group 
-      .col-md-2.offset-md-2
-        h2
-          span(class="badge badge-default") Nome
-      .col-md-4
-        input(class="form-control",type="text",name="nome")
+    form(id="", method="POST", action="/candidate")
+      .row.form-group(style="margin-top:85px")
+        .col-md-2.offset-md-2
+          .row
+            .col-md-8.label_form_candidate
+              h2 Nome
+        .col-md-4
+          input(class="form-control",type="text",name="nome")
 
-    .row.form-group 
-      .col-md-2.offset-md-2
-        h2
-          span(class="badge badge-default") CPF
-      .col-md-4
-        input(class="form-control",type="text",name="cpf", maxlength="14", OnKeyPress="formatar('###.###.###-##',this)")
-    .row.form-group 
-      .col-md-2.offset-md-2
-        h2
-          span(class="badge badge-default") Função
-      .col-md-4
-        input(class="form-control",type="text",name="func")
+      .row.form-group 
+        .col-md-2.offset-md-2
+          .row
+            .col-md-8.label_form_candidate
+              h2 CPF
+        .col-md-4
+          input(class="form-control",type="text",name="cpf", maxlength="14", OnKeyPress="formatar('###.###.###-##',this)")
+      .row.form-group 
+        .col-md-2.offset-md-2
+          .row
+            .col-md-8.label_form_candidate
+              h2 Função
+        .col-md-4
+          input(class="form-control",type="text",name="func")
+      .row.form-group
+        .col-md-2.offset-md-2
+          button(class="btn btn-primary btn-lg",type="submit") Enviar

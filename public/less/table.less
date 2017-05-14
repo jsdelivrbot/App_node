@@ -1,3 +1,5 @@
+
+
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
    background-color: 	#8e502e;
    border: 1px solid #e7c85e;
@@ -5,15 +7,20 @@
 }
 
 .table-striped > tbody > tr:nth-child(2n) > td, .table-striped > tbody > tr:nth-child(2n) > th { //
-   background-color: 	#742d1f;
+   background-color: 	@color_background_header;
    border: 1px solid #e7c85e;
 
 }
 
 thead{
-  background-color: #742d1f;
+  background-color: @color_background_header;
+  tr{
+    background-color: @color_background_header;
+    border: 1px solid #e7c85e;    
+  }
 }
 .table thead th{
+  background-color:
   border: 1px solid #e7c85e;
 }
 .table td, .table th{
@@ -21,6 +28,5 @@ thead{
 }
 .table-striped{
   color: #e7c85e;
-  // border-top-color:#e7c85e;
-  // border-color: #e7c85e;
+
 }
