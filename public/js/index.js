@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $( function() {
-    $( ".dra" ).draggable();
-   } );
-    });
+      $(function() {
+        $(".dra").draggable();
+      });
+
+  });

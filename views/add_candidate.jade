@@ -1,6 +1,22 @@
 extend layout
 block content
   .grid
-    .row 
-      .col-md-offset-3.col-md-6
-        input(type="text", placeholder="placeholder")
+    .row.form-group 
+      .col-md-2.offset-md-2
+        h2
+          span(class="badge badge-default") Nome
+      .col-md-4
+        input(class="form-control",type="text",name="nome")
+
+    .row.form-group 
+      .col-md-2.offset-md-2
+        h2
+          span(class="badge badge-default") CPF
+      .col-md-4
+        input(class="form-control",type="text",name="cpf", maxlength="14", OnKeyPress="formatar('###.###.###-##',this)")
+    .row.form-group 
+      .col-md-2.offset-md-2
+        h2
+          span(class="badge badge-default") Função
+      .col-md-4
+        input(class="form-control",type="text",name="func")
