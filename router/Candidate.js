@@ -1,7 +1,9 @@
 var express   = require('express');
+var path      = require('path');
 var candidate = express.Router();
+candidate.use(express.static(path.join(__dirname, '../public'))); // buscar um jeito mais elegante para solucionar essa perrenga
 
-// middleware that is specific to this router
+
 candidate.use(function timeLog(req, res, next) {
   console.log('Time: ', Date.now());
   next();

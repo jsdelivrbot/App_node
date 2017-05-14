@@ -1,11 +1,20 @@
-@color_background_header: #0000ff;
+@color_background_header:#742d1f;
+@color_text:#cca450;
+@color_button_bg:	#ab763d;
+@color_button_text: @color_background_header;
 
 .header{
   background-color: @color_background_header;
-  text-align: center
+  text-align: center;
+  color: @color_text;
 }
-.row{
-  .btn{
-    margin-bottom: 30px -1px;
+
+.btn-primary{
+  border-color: #cca450;
+  background-color: @color_button_bg;
+  color: @color_button_text;
+  &:hover{
+    background-color: @color_background_header;
+    color: @color_button_bg;
   }
 }

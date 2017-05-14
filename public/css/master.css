@@ -1,7 +1,43 @@
-.header {
-  background-color: #0000ff;
-  text-align: center;
+.container {
+  background-color: #e7c85e;
 }
-.row .btn {
-  margin-bottom: 30px -1px;
+body {
+  background-color: #e7c85e !important;
+}
+.header {
+  background-color: #742d1f;
+  text-align: center;
+  color: #cca450;
+}
+.btn-primary {
+  border-color: #cca450;
+  background-color: #ab763d;
+  color: #742d1f;
+}
+.btn-primary:hover {
+  background-color: #742d1f;
+  color: #ab763d;
+}
+.table-striped > tbody > tr:nth-child(2n+1) > td,
+.table-striped > tbody > tr:nth-child(2n+1) > th {
+  background-color: #8e502e;
+  border: 1px solid #e7c85e;
+}
+.table-striped > tbody > tr:nth-child(2n) > td,
+.table-striped > tbody > tr:nth-child(2n) > th {
+  background-color: #742d1f;
+  border: 1px solid #e7c85e;
+}
+thead {
+  background-color: #742d1f;
+}
+.table thead th {
+  border: 1px solid #e7c85e;
+}
+.table td,
+.table th {
+  border: 1px solid #e7c85e;
+}
+.table-striped {
+  color: #e7c85e;
 }
