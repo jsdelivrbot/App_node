@@ -13,17 +13,15 @@ candidate.use(function timeLog(req, res, next) {
   next();
 });
 
-candidate.get('/lista_candidato',controller_candidate.list_candidate);
-
 candidate.get('/formulario_candidato', controller_candidate.form_candidate);
 
 candidate.route('/')
-      .get(function() {
-        console.log("ok");
-      })
-      .post(controller_candidate.add_candidate)
-      .delete(function() {
-        console.log("del");
-      })
+      .get(controller_candidate.list_candidate)
+      .post(controller_candidate.add_candidate,return_index)
+      .delete(controller_candidate.remove_candidate)
 
+function return_index(req, res) {
+  url = req.protocol + '://' + req.get('host')
+  res.redirect(url);
+}
 module.exports = candidate;

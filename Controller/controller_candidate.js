@@ -6,22 +6,25 @@ var controller_candidate = express.Router();
 controller_candidate.use(express.static(path.join(__dirname, '../public')))
 
 exports.form_candidate = function(req, res) {
-  // model_candidate.example(req);
   res.render('add_candidate');
   res.end();
 }
-var lista = {};
-lista['nome'] = ["pedro","claudio"];
+
 exports.list_candidate = function (req, res) {
   model_candidate.show_candidates(req,res,function(result) {
-    console.log(result);
-    res.render('list_candidate',{'lista':lista});
+    res.render('list_candidate',{'lista':result.rows});
     res.end();
-  });
 
+  });
 }
 
-exports.add_candidate = function (req, res) {
-  console.log("bin",req.body);
-  res.render('index');
+exports.add_candidate = function (req, res, next) {
+  console.log(req.body);
+  model_candidate.save_candidate(req, res);
+  next();
+}
+
+exports.remove_candidate = function(req, res, next){
+  model_candidate.delete_candidate(req, res);
+  next();
 }

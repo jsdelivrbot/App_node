@@ -16,6 +16,11 @@ app.get('/', function(req, res) {
   });
 });
 
+exports.return =function (req, res) {
+  res.render('index',{
+    title: 'Menu Principal'
+  });
+}
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
